@@ -10,10 +10,10 @@ from mysql.connector import Error
 def create_database():
     connection = None
     try:
-        # Connect to MySQL Server (adjust user/password if needed)
+        # Connect to MySQL Server
         connection = mysql.connector.connect(
             host="localhost",
-            user="root",          # change if your username is different
+            user="root",               # change if your username is different
             password="sosnagemechu1"  # replace with your MySQL password
         )
 
@@ -29,7 +29,6 @@ def create_database():
         if connection is not None and connection.is_connected():
             cursor.close()
             connection.close()
-            # print("MySQL connection is closed")   # optional
 
-if name == "main":
+if __name__ == "__main__":
     create_database()
