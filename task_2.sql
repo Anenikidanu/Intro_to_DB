@@ -39,3 +39,10 @@ CREATE TABLE IF NOT EXISTS Order_Details (
     FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
     FOREIGN KEY (BookID) REFERENCES Books(BookID)
 );
+
+-- Insert sample data
+INSERT INTO Authors (Name, Bio) VALUES ('George Orwell', 'Author of dystopian novels.');
+INSERT INTO Books (Title, AuthorID, Price) VALUES ('1984', 1, 9.99);
+INSERT INTO Customers (Name, Email, Address, Phone) VALUES ('Alice Smith', 'alice@example.com', '123 Main St', '1234567890');
+INSERT INTO Orders (CustomerID, OrderDate) VALUES (1, '2025-08-20');
+INSERT INTO Order_Details (OrderID, BookID, Quantity) VALUES (1, 1, 2);
