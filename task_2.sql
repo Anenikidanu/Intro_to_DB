@@ -2,13 +2,13 @@
 
 USE alx_book_store;
 
-CREATE TABLE IF NOT EXISTS authors (
+CREATE TABLE IF NOT EXISTS Authors (
     author_id INT AUTO_INCREMENT PRIMARY KEY,
     author_name VARCHAR(100) NOT NULL,
     bio TEXT
 );
 
-CREATE TABLE IF NOT EXISTS books (
+CREATE TABLE IF NOT EXISTS Books (
     book_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(130) NOT NULL,
     author_id INT,
@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS books (
     FOREIGN KEY (author_id) REFERENCES authors(author_id)
 );
 
-CREATE TABLE IF NOT EXISTS customers (
+CREATE TABLE IF NOT EXISTS Customers (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_name VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
@@ -24,14 +24,14 @@ CREATE TABLE IF NOT EXISTS customers (
     phone VARCHAR(20)
 );
 
-CREATE TABLE IF NOT EXISTS orders (
+CREATE TABLE IF NOT EXISTS Orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT,
     order_date DATE,
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
 );
 
-CREATE TABLE IF NOT EXISTS order_details (
+CREATE TABLE IF NOT EXISTS Order_Details (
     order_detail_id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT,
     book_id INT,
